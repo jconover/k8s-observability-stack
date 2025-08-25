@@ -1,0 +1,56 @@
+# Temporary files
+*.tmp
+*.log
+*.swp
+.DS_Store
+
+# Build artifacts
+.build/
+.tmp/
+dist/
+
+# Helm
+*.tgz
+charts/*.tgz
+requirements.lock
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Test coverage
+coverage.out
+coverage.html
+*.test
+
+# Secrets
+secrets/
+*.key
+*.crt
+*.pem
+values-secrets.yaml
+
+# Backup files
+backups/
+*.backup
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+ENV/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
