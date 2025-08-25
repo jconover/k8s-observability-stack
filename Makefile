@@ -1,5 +1,5 @@
 ### **Makefile**
-```makefile
+#```makefile
 .PHONY: help install uninstall upgrade test lint deploy clean
 
 NAMESPACE := monitoring
