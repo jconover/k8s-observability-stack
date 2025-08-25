@@ -10,9 +10,6 @@ keywords:
   - grafana
   - loki
   - observability
-home: https://github.com/yourusername/k8s-observability-stack
-sources:
-  - https://github.com/yourusername/k8s-observability-stack
 maintainers:
   - name: Your Name
     email: your.email@example.com
@@ -23,6 +20,3 @@ dependencies:
   - name: loki-stack
     version: "2.9.10"
     repository: https://grafana.github.io/helm-charts
-  - name: jaeger
-    version: "0.71.0"
-    repository: https://jaegertracing.github.io/helm-charts

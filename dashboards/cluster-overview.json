@@ -1,0 +1,42 @@
+{
+  "dashboard": {
+    "title": "Kubernetes Cluster Overview",
+    "panels": [
+      {
+        "title": "CPU Usage by Namespace",
+        "targets": [
+          {
+            "expr": "sum(rate(container_cpu_usage_seconds_total[5m])) by (namespace)",
+            "legendFormat": "{{ namespace }}"
+          }
+        ],
+        "type": "graph"
+      },
+      {
+        "title": "Memory Usage by Namespace",
+        "targets": [
+          {
+            "expr": "sum(container_memory_usage_bytes) by (namespace)",
+            "legendFormat": "{{ namespace }}"
+          }
+        ],
+        "type": "graph"
+      },
+      {
+        "title": "Pod Count by Namespace",
+        "targets": [
+          {
+            "expr": "count(kube_pod_info) by (namespace)",
+            "legendFormat": "{{ namespace }}"
+          }
+        ],
+        "type": "graph"
+      }
+    ],
+    "refresh": "10s",
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    }
+  }
+}
