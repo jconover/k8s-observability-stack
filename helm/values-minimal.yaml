@@ -1,0 +1,46 @@
+# Minimal configuration for quick start
+
+kube-prometheus-stack:
+  # Disable admission webhooks to avoid cert issues
+  prometheusOperator:
+    admissionWebhooks:
+      enabled: false
+  
+  # Basic Prometheus config
+  prometheus:
+    prometheusSpec:
+      retention: 7d
+      resources:
+        requests:
+          memory: 1Gi
+          cpu: 500m
+  
+  # Basic Grafana config  
+  grafana:
+    enabled: true
+    adminPassword: "admin123"
+    persistence:
+      enabled: false  # Disable persistence for quick start
+  
+  # Basic AlertManager config
+  alertmanager:
+    alertmanagerSpec:
+      storage:
+        volumeClaimTemplate:
+          spec:
+            accessModes: ["ReadWriteOnce"]
+            resources:
+              requests:
+                storage: 1Gi
+
+loki-stack:
+  loki:
+    enabled: true
+    persistence:
+      enabled: false  # Disable persistence for quick start
+  
+  promtail:
+    enabled: true
+  
+  grafana:
+    enabled: false  # Using grafana from kube-prometheus-stack
